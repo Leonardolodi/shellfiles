@@ -1,0 +1,342 @@
+leolodi@LeonPC:/mnt/c/Users/lodis$ pwd
+/mnt/c/Users/lodis
+leolodi@LeonPC:/mnt/c/Users/lodis$ cd
+leolodi@LeonPC:~$ pwd
+/home/leolodi
+leolodi@LeonPC:~$ mkdir prova_dir
+leolodi@LeonPC:~$ ls -l
+total 8
+drwxr-xr-x 4 leolodi leolodi 4096 Oct 19 14:56 demo
+drwxr-xr-x 2 leolodi leolodi 4096 Nov  2 10:50 prova_dir
+leolodi@LeonPC:~$ chmod 750 prova_dir
+leolodi@LeonPC:~$ ls -l
+total 8
+drwxr-xr-x 4 leolodi leolodi 4096 Oct 19 14:56 demo
+drwxr-x--- 2 leolodi leolodi 4096 Nov  2 10:50 prova_dir
+leolodi@LeonPC:~$ ls /
+bin   dev  home  lib    lib64   lost+found  mnt  proc  run   srv  tmp  var
+boot  etc  init  lib32  libx32  media       opt  root  sbin  sys  usr
+leolodi@LeonPC:~$ ls / > root_list.txt
+leolodi@LeonPC:~$ ls -l
+total 12
+drwxr-xr-x 4 leolodi leolodi 4096 Oct 19 14:56 demo
+drwxr-x--- 2 leolodi leolodi 4096 Nov  2 10:50 prova_dir
+-rw-r--r-- 1 leolodi leolodi  114 Nov  2 10:55 root_list.txt
+leolodi@LeonPC:~$ cd prova_dir
+leolodi@LeonPC:~/prova_dir$ ls / > root_list.txt
+leolodi@LeonPC:~/prova_dir$ ls -l
+total 4
+-rw-r--r-- 1 leolodi leolodi 114 Nov  2 10:55 root_list.txt
+leolodi@LeonPC:~/prova_dir$ cat root_list.txt
+bin
+boot
+dev
+etc
+home
+init
+lib
+lib32
+lib64
+libx32
+lost+found
+media
+mnt
+opt
+proc
+root
+run
+sbin
+srv
+sys
+tmp
+usr
+var
+leolodi@LeonPC:~/prova_dir$ man mv
+-bash: man: command not found
+leolodi@LeonPC:~/prova_dir$ mv root_list.txt listato
+leolodi@LeonPC:~/prova_dir$ ls -l
+total 4
+-rw-r--r-- 1 leolodi leolodi 114 Nov  2 10:55 listato
+leolodi@LeonPC:~/prova_dir$ head -n 3 listato
+bin
+boot
+dev
+leolodi@LeonPC:~/prova_dir$ head -n 3 listato > listato3
+leolodi@LeonPC:~/prova_dir$ cat listato3
+bin
+boot
+dev
+leolodi@LeonPC:~/prova_dir$ tail -n 3
+
+^C
+leolodi@LeonPC:~/prova_dir$ tail -n 3 listato
+tmp
+usr
+var
+leolodi@LeonPC:~/prova_dir$ tail -n 3 listato >> listato3
+leolodi@LeonPC:~/prova_dir$ cat listato3
+bin
+boot
+dev
+tmp
+usr
+var
+leolodi@LeonPC:~/prova_dir$ pwd
+/home/leolodi/prova_dir
+leolodi@LeonPC:~/prova_dir$ ls -l
+total 8
+-rw-r--r-- 1 leolodi leolodi 114 Nov  2 10:55 listato
+-rw-r--r-- 1 leolodi leolodi  25 Nov  2 11:13 listato3
+leolodi@LeonPC:~/prova_dir$ rm *
+leolodi@LeonPC:~/prova_dir$ ls -l
+total 0
+leolodi@LeonPC:~/prova_dir$ who
+leolodi@LeonPC:~/prova_dir$ who > utenti_collegati
+leolodi@LeonPC:~/prova_dir$ ls -l
+total 0
+-rw-r--r-- 1 leolodi leolodi 0 Nov  2 11:15 utenti_collegati
+leolodi@LeonPC:~/prova_dir$ cat utenti_collegati
+leolodi@LeonPC:~/prova_dir$ wc -l
+^C
+leolodi@LeonPC:~/prova_dir$ wc -l utenti_collegati
+0 utenti_collegati
+leolodi@LeonPC:~/prova_dir$ ps ajux
+error: conflicting format options
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+for additional help text.
+
+For more details see ps(1).
+leolodi@LeonPC:~/prova_dir$ ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0   1804  1188 ?        Sl   10:48   0:00 /init
+root         7  0.0  0.0   1812    88 ?        Ss   10:48   0:00 /init
+root         8  0.0  0.0   1812    96 ?        S    10:48   0:00 /init
+leolodi      9  0.0  0.1   7296  3900 pts/0    Ss   10:48   0:00 -bash
+leolodi     41  0.0  0.1  11092  4320 pts/0    R+   11:18   0:00 ps aux
+leolodi@LeonPC:~/prova_dir$ ps aux > processi.txt
+leolodi@LeonPC:~/prova_dir$ ls -l
+total 4
+-rw-r--r-- 1 leolodi leolodi 429 Nov  2 11:19 processi.txt
+-rw-r--r-- 1 leolodi leolodi   0 Nov  2 11:15 utenti_collegati
+leolodi@LeonPC:~/prova_dir$ cat processi.txt
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0   1804  1188 ?        Sl   10:48   0:00 /init
+root         7  0.0  0.0   1812    88 ?        Ss   10:48   0:00 /init
+root         8  0.0  0.0   1812    96 ?        S    10:48   0:00 /init
+leolodi      9  0.0  0.1   7296  3900 pts/0    Ss   10:48   0:00 -bash
+leolodi     42  0.0  0.1  11092  4296 pts/0    R+   11:19   0:00 ps aux
+leolodi@LeonPC:~/prova_dir$ grep linux processi.txt
+leolodi@LeonPC:~/prova_dir$ grep root processi.txt
+root         1  0.0  0.0   1804  1188 ?        Sl   10:48   0:00 /init
+root         7  0.0  0.0   1812    88 ?        Ss   10:48   0:00 /init
+root         8  0.0  0.0   1812    96 ?        S    10:48   0:00 /init
+leolodi@LeonPC:~/prova_dir$ grep leolodi processi.txt
+leolodi      9  0.0  0.1   7296  3900 pts/0    Ss   10:48   0:00 -bash
+leolodi     42  0.0  0.1  11092  4296 pts/0    R+   11:19   0:00 ps aux
+leolodi@LeonPC:~/prova_dir$ ps -u root
+  PID TTY          TIME CMD
+    1 ?        00:00:00 init
+    7 ?        00:00:00 init
+    8 ?        00:00:00 init
+leolodi@LeonPC:~/prova_dir$ ps -u root | wc - l
+      4      16     115 -
+wc: l: No such file or directory
+      4      16     115 total
+leolodi@LeonPC:~/prova_dir$ ps -u root | wc -l
+4
+leolodi@LeonPC:~/prova_dir$ echo $HOME
+/home/leolodi
+leolodi@LeonPC:~/prova_dir$
+leolodi@LeonPC:~/prova_dir$ ls $HOME
+demo  prova_dir  root_list.txt
+leolodi@LeonPC:~/prova_dir$ ls $HOME | sort
+demo
+prova_dir
+root_list.txt
+leolodi@LeonPC:~/prova_dir$ ls $HOME | sort -r
+root_list.txt
+prova_dir
+demo
+leolodi@LeonPC:~/prova_dir$ ls $HOME | sort -r > listato_in_ordine_inverso.txt
+leolodi@LeonPC:~/prova_dir$ ls -l
+total 8
+-rw-r--r-- 1 leolodi leolodi  29 Nov  2 11:26 listato_in_ordine_inverso.txt
+-rw-r--r-- 1 leolodi leolodi 429 Nov  2 11:19 processi.txt
+-rw-r--r-- 1 leolodi leolodi   0 Nov  2 11:15 utenti_collegati
+leolodi@LeonPC:~/prova_dir$ cat listato_in_ordine_inverso.txt
+root_list.txt
+prova_dir
+demo
+leolodi@LeonPC:~/prova_dir$ ls -p $HOME
+demo/  prova_dir/  root_list.txt
+leolodi@LeonPC:~/prova_dir$ ls -p $HOME | grep /
+demo/
+prova_dir/
+leolodi@LeonPC:~/prova_dir$ ls -p $HOME | grep / | sort
+demo/
+prova_dir/
+leolodi@LeonPC:~/prova_dir$ ls -p $HOME | grep / | sort > home_dirs.txt
+leolodi@LeonPC:~/prova_dir$ cat home_dirs.txt
+demo/
+prova_dir/
+leolodi@LeonPC:~/prova_dir$ head -n 4 home_dirs.txt
+demo/
+prova_dir/
+leolodi@LeonPC:~/prova_dir$ head -n 4 home_dirs.txt > 4_home_dirs.txt
+leolodi@LeonPC:~/prova_dir$ ls -l
+total 16
+-rw-r--r-- 1 leolodi leolodi  17 Nov  2 11:30 4_home_dirs.txt
+-rw-r--r-- 1 leolodi leolodi  17 Nov  2 11:29 home_dirs.txt
+-rw-r--r-- 1 leolodi leolodi  29 Nov  2 11:26 listato_in_ordine_inverso.txt
+-rw-r--r-- 1 leolodi leolodi 429 Nov  2 11:19 processi.txt
+-rw-r--r-- 1 leolodi leolodi   0 Nov  2 11:15 utenti_collegati
+leolodi@LeonPC:~/prova_dir$ cat 4_home_dirs.txt
+demo/
+prova_dir/
+leolodi@LeonPC:~/prova_dir$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+leolodi:x:1000:1000:,,,:/home/leolodi:/bin/bash
+messagebus:x:100:108::/nonexistent:/usr/sbin/nologin
+leolodi@LeonPC:~/prova_dir$ grep /sbin/nologin /etc/passwd
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+messagebus:x:100:108::/nonexistent:/usr/sbin/nologin
+leolodi@LeonPC:~/prova_dir$ grep /sbin/nologin /etc/passwd | sort
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+messagebus:x:100:108::/nonexistent:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+leolodi@LeonPC:~/prova_dir$ grep /sbin/nologin /etc/passwd | sort | head -m 5
+head: invalid option -- 'm'
+Try 'head --help' for more information.
+leolodi@LeonPC:~/prova_dir$ grep /sbin/nologin /etc/passwd | sort | head -n 5
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+leolodi@LeonPC:~/prova_dir$ ls -t $HOME
+prova_dir  root_list.txt  demo
+leolodi@LeonPC:~/prova_dir$ ls -t $HOME | head -n 3
+prova_dir
+root_list.txt
+demo
+leolodi@LeonPC:~/prova_dir$ ls -t $HOME | head -n 3 | wc -c
+29
+leolodi@LeonPC:~/prova_dir$ ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0   1804  1188 ?        Sl   10:48   0:00 /init
+root         7  0.0  0.0   1812    88 ?        Ss   10:48   0:00 /init
+root         8  0.0  0.0   1812    96 ?        S    10:48   0:00 /init
+leolodi      9  0.0  0.1   7296  3908 pts/0    Ss   10:48   0:00 -bash
+leolodi     92  0.0  0.1  11092  4416 pts/0    R+   11:36   0:00 ps aux
+leolodi@LeonPC:~/prova_dir$ ps aux --sort=-cpu%
+error: unknown sort specifier
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+leolodi@LeonPC:~/prova_dir$ ps aux --sort=-%cpu
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         8  0.0  0.0   1812    96 ?        S    10:48   0:00 /init
+leolodi      9  0.0  0.1   7296  3908 pts/0    Ss   10:48   0:00 -bash
+root         1  0.0  0.0   1804  1188 ?        Sl   10:48   0:00 /init
+root         7  0.0  0.0   1812    88 ?        Ss   10:48   0:00 /init
+leolodi     94  0.0  0.1  11092  4312 pts/0    R+   11:37   0:00 ps aux --sort=-%cpu
+leolodi@LeonPC:~/prova_dir$ ps aux --sort=-%cpu | head -n 3
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         8  0.0  0.0   1812    96 ?        S    10:48   0:00 /init
+leolodi      9  0.0  0.1   7296  3908 pts/0    Ss   10:48   0:00 -bash
+leolodi@LeonPC:~/prova_dir$ ps aux --sort=-%cpu | head -n 3 | cpu_cpuconsuming.txt
+-bash: cpu_cpuconsuming.txt: command not found
+leolodi@LeonPC:~/prova_dir$ ps aux --sort=-%cpu | head -n 3 > cpu_cpuconsuming.txt
+leolodi@LeonPC:~/prova_dir$ ls -l
+total 20
+-rw-r--r-- 1 leolodi leolodi  17 Nov  2 11:30 4_home_dirs.txt
+-rw-r--r-- 1 leolodi leolodi 215 Nov  2 11:39 cpu_cpuconsuming.txt
+-rw-r--r-- 1 leolodi leolodi  17 Nov  2 11:29 home_dirs.txt
+-rw-r--r-- 1 leolodi leolodi  29 Nov  2 11:26 listato_in_ordine_inverso.txt
+-rw-r--r-- 1 leolodi leolodi 429 Nov  2 11:19 processi.txt
+-rw-r--r-- 1 leolodi leolodi   0 Nov  2 11:15 utenti_collegati
+leolodi@LeonPC:~/prova_dir$ cat cpu_cpuconsuming.txt
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         8  0.0  0.0   1812    96 ?        S    10:48   0:00 /init
+leolodi      9  0.0  0.1   7296  3908 pts/0    Ss   10:48   0:00 -bash
+leolodi@LeonPC:~/prova_dir$ ps aux --sort=-%cpu | tail -n 3 >> cpu_cpuconsuming.txt
+leolodi@LeonPC:~/prova_dir$ ls -l
+total 20
+-rw-r--r-- 1 leolodi leolodi  17 Nov  2 11:30 4_home_dirs.txt
+-rw-r--r-- 1 leolodi leolodi 446 Nov  2 11:40 cpu_cpuconsuming.txt
+-rw-r--r-- 1 leolodi leolodi  17 Nov  2 11:29 home_dirs.txt
+-rw-r--r-- 1 leolodi leolodi  29 Nov  2 11:26 listato_in_ordine_inverso.txt
+-rw-r--r-- 1 leolodi leolodi 429 Nov  2 11:19 processi.txt
+-rw-r--r-- 1 leolodi leolodi   0 Nov  2 11:15 utenti_collegati
+leolodi@LeonPC:~/prova_dir$  cat cpu_cpuconsuming.txt
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         8  0.0  0.0   1812    96 ?        S    10:48   0:00 /init
+leolodi      9  0.0  0.1   7296  3908 pts/0    Ss   10:48   0:00 -bash
+root         7  0.0  0.0   1812    88 ?        Ss   10:48   0:00 /init
+leolodi    104  0.0  0.1  11092  4412 pts/0    R+   11:40   0:00 ps aux --sort=-%cpu
+leolodi    105  0.0  0.0   5492   924 pts/0    S+   11:40   0:00 tail -n 3
+leolodi@LeonPC:~/prova_dir$ grep -v $USER cpu_cpuconsuming.txt
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         8  0.0  0.0   1812    96 ?        S    10:48   0:00 /init
+root         7  0.0  0.0   1812    88 ?        Ss   10:48   0:00 /init
+leolodi@LeonPC:~/prova_dir$
