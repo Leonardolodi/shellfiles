@@ -24,7 +24,7 @@ export PATH
 echo '0' > /tmp/max_counter
 > /tmp/max_dirname
 
-Lab03-es03-cancella_versioni_preliminari_ric.sh "`pwd`"/"$1"
+Lab03-es5-cancella_versioni_preliminari_ric.sh "`pwd`"/"$1"
 
 echo "La directory che conteneva il maggior numero di file cancellati è: `cat /tmp/max_dirname`"
 

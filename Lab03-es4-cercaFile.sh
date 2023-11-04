@@ -31,7 +31,7 @@ fi
 PATH=$PATH:`pwd` # aggiunge directory script corrente al PATH
 export PATH # esporta il PATH
 
-Lab03-es02-cercaStringa.sh "$1" "$2" $3
+Lab03-es03-cercaStringa.sh "$1" "$2" $3
 echo La directory con il maggior numero di file è: `cat /tmp/.max_dirname.tmp` con `wc -l < /tmp/.max_counter.tmp` file
 
 rm -f /tmp/.max_counter.tmp

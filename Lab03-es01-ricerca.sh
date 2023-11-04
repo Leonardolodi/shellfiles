@@ -12,7 +12,7 @@ shift
 
 cd "$sorg"
 
-for ext in $*
+for ext in $* #per ogni estensione dobbiamo fare un ciclo for
 do
         for file in "`ls *$ext 2>/dev/null`"
         do

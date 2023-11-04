@@ -8,8 +8,8 @@ do
     if test -f "$i" -a -w "$i"
     then
 	   # soluzioni alternative, commentare una delle due righe sucessive
-	   if test `head -n 1 $i | cut -f 3 -d ','` = preliminare
-	   #if test `head -n 1 $i | grep preliminare`
+	   #if test `head -n 1 $i | cut -f 3 -d ','` = preliminare
+	   if test `head -n 1 $i | grep preliminare`
 	   then
             echo "`pwd`/$i è preliminare"
 			# rm commentata per sicurezza...

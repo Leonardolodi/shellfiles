@@ -36,7 +36,7 @@ export STRINGA
 
 while true
 do
-    Lab03-es04-copylines_ric.sh "$dir" $*
+    Lab03-es06-copylines_ric.sh "$dir" $*
 
     num_ris=`cat /tmp/.risultati | wc -l`
     if test $num_ris -gt 0

@@ -15,7 +15,7 @@ case $1 in
 esac
 
 num=$1
-shift
+shift #effettua lo shift degli argomenti 
 
 case $1 in
         /*) if test ! -d $1

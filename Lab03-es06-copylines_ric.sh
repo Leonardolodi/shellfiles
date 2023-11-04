@@ -5,7 +5,7 @@ shift
 
 for i in $*
 do
-    if test -f $i -a -r $i
+    if test -f $i -a -r $i -a -w $i
     then
         if test `grep -c $STRINGA $i` -ge 1
         then
