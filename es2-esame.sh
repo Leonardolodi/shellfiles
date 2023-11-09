@@ -49,7 +49,8 @@ TOTALE=/tmp/.totale; export TOTALE; echo 0 >$TOTALE
 
 recupera_ric.sh "$1" "$2" "$3"
 
-echo La directory contenente il maggior numero di "file" ripristinati è`head -1 /tmp/.maxDir` con `cat /tmp/.maxHit` occorrenze totali.
+echo La directory contenente il maggior numero di "file" ripristinati 
+è`head -1 /tmp/.maxDir` con `cat /tmp/.maxHit` occorrenze totali.
 echo sono stati spostati `cat $TOTALE` file.
 
 rm $MAX_DIR
